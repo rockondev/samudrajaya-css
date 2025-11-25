@@ -1,291 +1,267 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Service Rolling Door — Template Bootstrap</title>
 
-    <!-- BOOTSTRAP CDN -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    <title>Samudra Rolling Door — Metro UI</title>
 
-    <!-- Custom CSS minimal -->
-    <style>
-      body {
-        font-family: "Segoe UI", sans-serif;
-        background: #f5f7fc;
-      }
-      .hero {
-        padding: 60px 0;
-      }
-      .floating-wa {
-        position: fixed;
-        bottom: 22px;
-        right: 22px;
-        background: #25d366;
-        color: #fff;
-        font-size: 26px;
-        padding: 14px 16px;
-        border-radius: 50%;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        z-index: 999;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-          <img
-            aria-label="logo"
-            src="https://placehold.co/50x50?text=Logo"
-            width="50"
-            height="50"
-            class="rounded"
-          />
-          <div>
-            <div class="fw-bold">Samudra Jaya Rolling Door</div>
-            <small class="text-muted"
-              >Service Rolling Door Tangerang Selatan</small
-            >
-          </div>
-        </a>
+    <!-- Segoe UI Light (Fallback Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-        <button
-          aria-label="navbar"
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navMenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Beranda</a>
-            </li>
-            <!-- <li class="nav-item"><a class="nav-link" href="#about">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li> -->
-          </ul>
-          <a
-            class="btn btn-primary ms-lg-3"
-            href="https://api.whatsapp.com/send?phone=6282116920323"
-            >0896‑8723‑9943</a
-          >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body class="metro-primary metro-primary-text">
+    <!-- NAVBAR NEW -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top" data-bs-theme="light">
+        <div class="container-fluid">
+            <img src="assets/images/logo.jpg" alt="Logo" class="d-inline d-lg-none rounded" height="64">
+
+            <!-- Logo + Text di desktop -->
+            <img src="assets/images/logo.jpg" alt="Logo" class="d-none d-lg-inline rounded me-2" height="100">
+            <div class="navbar-mobile-title">
+                Samudra Jaya Rolling Door
+            </div>
+
+            <!-- BURGER MENU -->
+            <button title="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- OFFCANVAS SIDEBAR -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button title="btnMenu" type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link" href="#">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Layanan</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tentang Kami</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-6">
-            <h2 class="fw-bold">Solusi Terbaik untuk Rolling Door Anda</h2>
-            <p class="text-muted">
-              Instalasi, service, dan maintenance — cepat, profesional,
-              terpercaya.
-            </p>
-            <a href="#services" class="btn btn-primary me-2">Lihat Layanan</a>
-            <a
-              href="https://api.whatsapp.com/send?phone=6282116920323"
-              class="btn btn-outline-primary"
-              >Hubungi Kami</a
-            >
-          </div>
-          <div class="col-lg-6">
-            <img
-              aria-label="hero-img"
-              src="https://placehold.co/50x50?text=Logo"
-              class="img-fluid rounded shadow"
-            />
-          </div>
+    <section id="hero" class="hero section light-background">
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center aos-init aos-animate"
+                    data-aos="zoom-out">
+                    <h1>Welcome to <span>BizLand</span></h1>
+                    <p>We are team of talented designers making websites with Bootstrap</p>
+                    <div class="d-flex">
+                        <a href="#about" class="btn-get-started">Get Started</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="py-5">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <div class="p-3 bg-white rounded shadow-sm">
-              <h4>Tentang Kami</h4>
-              <p class="text-muted">
-                Kami menyediakan jasa instalasi, service, dan perawatan rolling
-                door &amp; folding gate.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="row g-3">
-              <div class="col-md-4 text-center">
-                <img
-                  aria-label="icon-quality"
-                  src="https://placehold.co/50x50?text=iconQuality"
-                  width="45"
-                />
-                <h6 class="mt-2">Kualitas Terbaik</h6>
-                <p class="text-muted small">
-                  Material dan pemasangan berkualitas.
-                </p>
-              </div>
-              <div class="col-md-4 text-center">
-                <img
-                  aria-label="icon-price"
-                  src="https://placehold.co/50x50?text=iconPrice"
-                  width="45"
-                />
-                <h6 class="mt-2">Harga Kompetitif</h6>
-                <p class="text-muted small">Harga transparan dan jelas.</p>
-              </div>
-              <div class="col-md-4 text-center">
-                <img
-                  aria-label="icon-team"
-                  src="https://placehold.co/50x50?text=IconTeam"
-                  width="45"
-                />
-                <h6 class="mt-2">Tim Profesional</h6>
-                <p class="text-muted small">Teknisi berpengalaman.</p>
-              </div>
-            </div>
-          </div>
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <p>
+                Perusahaan spesialis Rolling Door, Folding Gate, dan Grill
+                berpengalaman 10+ tahun. Melayani Jabodetabek dengan hasil rapi &
+                bergaransi.
+            </p>
         </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="py-5 bg-light">
-      <div class="container">
-        <h4 class="fw-bold mb-4">Layanan Kami</h4>
-        <div class="row g-3">
-          <div class="col-md-4">
-            <div class="p-3 bg-white rounded shadow-sm">
-              Installasi Rolling Door
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-3 bg-white rounded shadow-sm">
-              Perbaikan &amp; Service
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-3 bg-white rounded shadow-sm">
-              Maintenance Berkala
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- GALLERY -->
     <section id="gallery" class="py-5">
-      <div class="container">
-        <h4 class="fw-bold mb-3">Galeri</h4>
-        <div class="row g-3">
-          <div class="col-6 col-md-3">
-            <img
-              aria-label="galeri"
-              src="https://placehold.co/50x50?text=Galery1"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="col-6 col-md-3">
-            <img
-              aria-label="galeri"
-              src="https://placehold.co/50x50?text=Galery2"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="col-6 col-md-3">
-            <img
-              aria-label="galeri"
-              src="https://placehold.co/50x50?text=Galery3"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="col-6 col-md-3">
-            <img
-              aria-label="galeri"
-              src="https://placehold.co/50x50?text=Galery4"
-              class="img-fluid rounded"
-            />
-          </div>
+        <div class="container">
+            <h2 class="section-title">Galeri Pekerjaan</h2>
+            <div class="row g-3">
+                <div class="col-6 col-md-3">
+                    <img src="https://via.placeholder.com/400" class="img-fluid rounded" />
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://via.placeholder.com/400" class="img-fluid rounded" />
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://via.placeholder.com/400" class="img-fluid rounded" />
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://via.placeholder.com/400" class="img-fluid rounded" />
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Layanan Kami</h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="metro-card h-100">
+                        <i class="bi bi-tools"></i>
+                        <h5 class="mt-3 fw-bold">Service Rolling Door</h5>
+                        <p>
+                            Perbaikan cepat dan bergaransi untuk semua jenis rolling door.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="metro-card h-100">
+                        <i class="bi bi-door-open-fill"></i>
+                        <h5 class="mt-3 fw-bold">Pembuatan Baru</h5>
+                        <p>
+                            Pembuatan rolling door & folding gate berbagai ukuran dan bahan.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="metro-card h-100">
+                        <i class="bi bi-gear-fill"></i>
+                        <h5 class="mt-3 fw-bold">Rolling Door Otomatis</h5>
+                        <p>Pemasangan motor otomatis untuk kenyamanan dan keamanan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-5 bg-light">
-      <div class="container">
-        <h4 class="fw-bold mb-4">Hubungi Kami</h4>
-        <p>Telepon : <a href="tel:+6281584461268">0815-8446-1268</a></p>
-        <p>
-          WhatsApp:
-          <a href="https://api.whatsapp.com/send?phone=6282116920323"
-            >0821-1692-0323</a
-          >
-        </p>
-        <p>
-          Email:
-          <a href="mailto:samudrarollingdoor1422@gmail.com"
-            >samudrarollingdoor1422@gmail.com</a
-          >
-        </p>
-        <p>
-          Alamat: JL. Raya Puspitek, No. 10, Bakti Jaya, Kec. Serpong, Kota
-          Tangerang Selatan, Banten - 15315
-        </p>
-
-        <div class="d-flex gap-3 mt-3">
-          <a aria-label="instagram" href="#" class="text-dark fs-4"
-            ><i class="bi bi-instagram"></i
-          ></a>
-          <a aria-label="facebook" href="#" class="text-dark fs-4"
-            ><i class="bi bi-facebook"></i
-          ></a>
-          <a aria-label="youtube" href="#" class="text-dark fs-4"
-            ><i class="bi bi-youtube"></i
-          ></a>
-          <a aria-label="tiktok" href="#" class="text-dark fs-4"
-            ><i class="bi bi-tiktok"></i
-          ></a>
+    <section id="contact" class="contact py-5 bg-light">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="row gy-4">
+                <div class="col-lg-6">
+                    <div class="info-wrap">
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <h3>Alamat</h3>
+                                <p>JL. Raya Puspitek, No. 10, Bakti Jaya, Kec. Serpong, Tangerang Selatan</p>
+                            </div>
+                        </div>
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Telepon</h3>
+                                <a href="tel:+6281584461268">081584461268</a>
+                            </div>
+                        </div>
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-whatsapp flex-shrink-0"></i>
+                            <div>
+                                <h3>WhatsApp</h3>
+                                <a href="https://api.whatsapp.com/send?phone=6282116920323">082116920323</a>
+                            </div>
+                        </div>
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <a href="mailto:samudrarollingdoor1422@gmail.com">samudrarollingdoor1422@gmail.com</a>
+                                <a href="mailto:rdian1637@gmail.com">rdian1637@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="info-wrap">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.363235499138!2d106.6995859745329!3d-6.346988862095362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e59f05e94423%3A0x325fe431e2cd2e7b!2sJl.%20Raya%20Puspitek%20No.10%2C%20Buaran%2C%20Kec.%20Serpong%2C%20Kota%20Tangerang%20Selatan%2C%20Banten%2015310!5e0!3m2!1sid!2sid!4v1764061260111!5m2!1sid!2sid"
+                            class="map-iframe" loading="lazy" referrerpolicy="no-referrer">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-3 bg-white border-top">
-      <div class="container text-center text-muted small">
-        © <span id="year"></span> Samudra Jaya Rolling Door.
-      </div>
+    <footer id="footer" class="footer">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <span class="sitename">Samudra Jaya Rolling Door</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>JL. Raya Puspitek, No. 10, Bakti Jaya</p>
+                        <p>Kec. Serpong, Tangerang Selatan</p>
+                        <p class="mt-3"><strong>Phone:</strong><a href="tel:+6281584461268" style="font-size: inherit;"><span> 081584461268</span></a></p>
+                        <p><strong>WhatsApp:</strong><a href="https://api.whatsapp.com/send?phone=6282116920323" style="font-size: inherit;"><span> 082116920323</span></a></p>
+                        <p><strong>Email:</strong><a href="mailto:samudrarollingdoor1422@gmail.com" style="font-size: inherit;"><span> samudrarollingdoor1422@gmail.com</span></a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <h4>Ikuti Kami</h4>
+                    <p>Jangan lewatkan pembaruan terbaru kami di media sosial!</p>
+                    <div class="social-links d-flex">
+                        <a href="https://www.tiktok.com/@samudrarollingdoor"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.facebook.com/rendy.risnawa"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.facebook.com/rendy.beragii"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/samudra_jaya1422/"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span id="year"></span> <strong class="px-1 sitename">Samudra Jaya Rolling Door</strong> <span>All Rights Reserved</span>
+            </p>
+        </div>
     </footer>
 
-    <!-- FLOATING WA -->
-    <a
-      aria-label="whatsapp"
-      href="https://api.whatsapp.com/send?phone=6282116920323"
-      class="floating-wa"
-    >
-      <i class="bi bi-whatsapp"></i>
+    <!-- Floating WA -->
+    <a href="https://api.whatsapp.com/send?phone=6282116920323" class="floating-wa">
+        <i class="bi bi-whatsapp"></i>
     </a>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("year").innerText = new Date().getFullYear();
     </script>
-  </body>
+</body>
+
 </html>
