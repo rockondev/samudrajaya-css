@@ -41,13 +41,13 @@ body {
   justify-content: flex-start;
   padding: 60px 0;
   color: white;
-  background: url('../images/hero11.png') top left;
+  background: url('../images/RollingDoor.jpg') top left;
   background-size: cover;
   background-attachment: fixed;
 }
 
 #hero .hero-bg {
-  position: absolute;
+  position: relative;
   inset: 0;
   background: inherit;
   transform: scale(1.05);
