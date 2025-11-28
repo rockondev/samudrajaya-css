@@ -1,111 +1,134 @@
-.hero {
-    width: 100%;
-    min-height: 75vh;
-    position: relative;
-    padding: 60px 0;
-    display: flex;
-    align-items: center;
-    background: url("assets/images/hero.jpg") top left;
-    background-size: cover;
+/* BASE STYLES */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f5f7fa;
+    color: #bca6a6;
 }
 
-.hero:before {
-    content: "";
-    background: color-mix(in srgb, var(--background-color), transparent 30%);
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
+.metro-primary {
+    background: hsl(180, 100%, 100%) !important;
 }
 
-.hero .container {
-    position: relative;
+.metro-primary-text {
+    color: #0078d7 !important;
 }
 
-.hero h1 {
-    margin: 0;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 56px;
+.metro-card {
+    background: white;
+    border-radius: 0;
+    border-left: 6px solid #0078d7;
+    padding: 25px;
+    transition: 0.2s;
 }
 
-.hero h1 span {
-    color: var(--accent-color);
+.metro-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-.hero p {
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
-    margin: 5px 0 30px 0;
-    font-size: 20px;
-    font-weight: 400;
+.metro-card i {
+    font-size: 45px;
+    color: #0078d7;
 }
 
-.hero .btn-get-started {
-    color: var(--contrast-color);
-    background: #0078d7;
-    /* background: var(--accent-color); */
-    font-family: var(--heading-font);
-    font-weight: 400;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 4px;
-    transition: 0.5s;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+/* HERO SECTION */
+#hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 0;
+  color: white;
+  background: url('../images/hero11.png') top left;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.hero .btn-get-started:hover {
-    color: var(--contrast-color);
-    background: color-mix(in srgb, var(--accent-color), transparent 15%);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+#hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  transform: scale(1.05);
+  z-index: 0;
 }
 
-.hero .btn-watch-video {
-    font-size: 16px;
-    transition: 0.5s;
-    margin-left: 25px;
-    color: var(--default-color);
-    font-weight: 600;
+#hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
 }
 
-.hero .btn-watch-video i {
-    color: var(--accent-color);
+#hero .hero-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  background: rgba(0,25,60,0.55);
+  padding: 28px 34px;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  animation: fadeInUp .6s ease-out;
+  box-shadow: 0 8px 38px rgba(0,0,0,0.28);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#hero h1 {
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+#hero h1 span {
+  color: #65b8ff;
+}
+
+#hero p {
+  font-size: 19px;
+  margin-bottom: 28px;
+  color: #ffffff;
+}
+
+#hero .btn-get-started {
+  padding: 13px 32px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.35s;
+  display: inline-block;
+  background: linear-gradient(135deg, #0078d7, #0a96ff);
+}
+
+#hero .btn-get-started:hover {
+  background: linear-gradient(135deg, #005a9e, #0a7ad1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #hero {
+    padding: 40px 0;
+    text-align: center;
+    background-attachment: scroll;
+  }
+  #hero .hero-wrapper {
+    max-width: 100%;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  #hero h1 {
     font-size: 32px;
-    transition: 0.3s;
-    line-height: 0;
-    margin-right: 8px;
-}
-
-.hero .btn-watch-video:hover {
-    color: var(--accent-color);
-}
-
-.hero .btn-watch-video:hover i {
-    color: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
-.hero .animated {
-    animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
-
-@media (max-width: 640px) {
-    .hero h1 {
-        font-size: 28px;
-        line-height: 36px;
-    }
-
-    .hero p {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 30px;
-    }
-
-    .hero .btn-get-started,
-    .hero .btn-watch-video {
-        font-size: 13px;
-    }
+  }
+  #hero p {
+    font-size: 16px;
+  }
 }
 
 @keyframes up-down {
@@ -118,34 +141,219 @@
     }
 }
 
+/* NAVBAR SECTION */
+.navbar {
+  background: #f5f9fcd4 !important;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  min-height: 70px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height: 70px;
+  transition: height 0.3s ease;
+}
+
+#logo-mobile {
+  height: 46px;
+}
+
+.navbar .nav-link {
+  position: relative;
+  font-weight: 500;
+  color: #333;
+  padding: 8px 12px;
+  transition: color 0.35s ease;
+  font-size: 15px;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #0078d7;
+  text-shadow: 0 0 6px rgba(0,120,215,0.4);
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #0078d7;
+  transition: width 0.35s ease-in-out;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  width: 100%;
+}
+
 .navbar-mobile-title {
+  /* display: none; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  z-index: 9;
+}
+
+@media (max-width: 991px) {
+  .navbar-brand img {
+    height: 42px; /* shrink logo */
+  }
+
+  .navbar-mobile-title {
+    display: block;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
     top: 50%;
     transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: 600;
+    color: #0078d7;
+    white-space: nowrap;
+    z-index: 10;
+    text-align: center;
+  }
+
+  #logo-mobile {
+    height: 42px;
+    margin-right: 8px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    padding-top: 8px;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+  }
+  .navbar .nav-link:active,
+  .navbar .nav-link:focus {
+    color: #0078d7 !important;
+    text-shadow: 0 0 6px rgba(0,120,215,0.4);
+  }
+  .navbar .nav-link:active::after,
+  .navbar .nav-link:focus::after {
+    width: 100%;
+  }
 }
 
-/* --- TINGGI NAVBAR --- */
-.navbar {
-    padding-top: 14px !important;
-    padding-bottom: 14px !important;
-    min-height: 70px;
+/* SECTION ABOUT */
+#about {
+  color: #f0f6ff;
+  line-height: 1.75;
+  font-size: 17px;
+  padding: 80px 0;
+
+  background:
+    linear-gradient(
+      rgba(7, 19, 48, 0.82),
+      rgba(10, 12, 28, 0.9)
+    ),
+    url("../images/RollingGrille3.jpg") center/cover no-repeat;
 }
 
-/* --- LOGO BESAR DI DESKTOP --- */
-.navbar-brand img {
-    height: 55px !important;
+#about .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  text-align: center;
 }
 
-/* MOBILE ONLY */
-@media (max-width: 991px) {
-    .navbar-brand img {
-        height: 42px !important;
-    }
+#about .about-title h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+
+  display: inline-block;
+  padding: 10px 22px;
+
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  position: relative;
+}
+
+#about .about-title p {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #bcdcff;
+}
+
+#about .about-title h2::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: #65b8ff;
+  margin: 12px auto 0;
+  display: block;
+  border-radius: 2px;
+}
+
+#about .about-content {
+  max-width: 900px;
+  margin: 18px auto;
+  color: #d8e8ff;
+
+  background: rgba(255, 255, 255, 0.07);
+  padding: 18px 24px;
+  border-radius: 8px;
+
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  text-align: justify;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  #about .about-title h2 {
+    font-size: 26px;
+    padding: 8px 16px;
+  }
+
+  #about .about-content p {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+}
+
+/* GALLERY SECTION */
+#gallery img {
+  width: 100%;
+  height: 200px;      /* Tinggi fix, bisa kamu sesuaikan */
+  object-fit: cover;  /* Crop otomatis supaya rapi */
+  border-radius: 8px; /* Biar lebih halus */
+  display: block;
+}
+#gallery .col-6 {
+  padding: 4px;
+}
+.gallery-img {
+  cursor: zoom-in; /* icon kaca pembesar, lebih relevan */
+  transition: transform .3s ease, filter .3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.08);
+}
+
+@media (min-width: 991px) {
+  #gallery img {
+    height: 230px;
+  }
 }
 
 
@@ -360,94 +568,7 @@
     font-size: 13px;
 }
 
-body {
-    font-family: "Segoe UI", sans-serif;
-    background: #f5f7fa;
-    color: #bca6a6;
-}
 
-/* METRO COLORS */
-.metro-primary {
-    background: hsl(180, 100%, 100%) !important;
-}
-
-.metro-primary-text {
-    color: #0078d7 !important;
-}
-
-/* NAVBAR */
-.navbar {
-    background: #f5f9fcd4 !important;
-    font-size: 12px;
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
-    min-height: 70px;
-    /* bebas kamu atur */
-}
-
-.navbar-brand {
-    font-weight: 300;
-    letter-spacing: 0.5px;
-}
-
-.nav-link {
-    font-weight: 100;
-    font-size: 15px;
-}
-
-.navbar-toggler {
-    /* amargin: auto; */
-}
-
-/* HERO Metro UI */
-#hero {
-    background: #0078d7;
-    background-image: url('../images/RollingDoor.jpg');
-    min-height: 70vh;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 60px 0;
-}
-
-#hero h1 {
-    font-weight: 300;
-    font-size: 48px;
-}
-
-#hero .btn {
-    font-weight: 600;
-    border-radius: 0;
-    background: yellowgreen;
-}
-
-/* Section Title */
-h2.section-title {
-    font-weight: 600;
-    color: #0078d7;
-    border-left: 6px solid #0078d7;
-    padding-left: 10px;
-    margin-bottom: 20px;
-}
-
-/* Cards Flat */
-.metro-card {
-    background: white;
-    border-radius: 0;
-    border-left: 6px solid #0078d7;
-    padding: 25px;
-    transition: 0.2s;
-}
-
-.metro-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-.metro-card i {
-    font-size: 45px;
-    color: #0078d7;
-}
 
 /* Contact Icons */
 .icon-box {
